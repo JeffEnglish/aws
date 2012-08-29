@@ -203,6 +203,8 @@ awsHelper.httpSuccess = function(thisRef, cbOnData) {
  * */
 awsHelper.createHttpObject = function(cbOnData, cbOnError) {
 	var xhr = Ti.Network.createHTTPClient();
+	xhr.setRequestHeader('User-Agent', customUserAgent);
+	
 	xhr.onload = function(response) {
 		awsHelper.httpSuccess(this, cbOnData);
 	};

@@ -38,6 +38,12 @@ var sessionOBJ = {
 	secretKey : null	//To be initalized via the authorize method
 };
 
+//Custom UsrAgent
+//aws-sdk-appcelerator <tisdk-version> <os-version> <os-platform> <locale>
+var customUserAgent = 'aws-sdk-appcelerator ' + Titanium.version + ' ' + Titanium.Platform.version + ' ' + Titanium.Platform.osname + ' ' + Titanium.Locale.currentLocale;
+//this._httpClient.setRequestHeader('User-Agent', customUserAgent);
+Titanium.userAgent = customUserAgent;
+
 /**
  * Uses the AWS Query API to invoke an Action specified by the method, along with the parameters,
  * returns the response returned by the Service, and raises an Error callback in case of a failure.
