@@ -44,6 +44,9 @@ var customUserAgent = 'aws-sdk-appcelerator ' + Titanium.version + ' ' + Titaniu
 //this._httpClient.setRequestHeader('User-Agent', customUserAgent);
 Titanium.userAgent = customUserAgent;
 
+var regionEndpoint = 'us-east-1';
+//us-west-1
+
 /**
  * Uses the AWS Query API to invoke an Action specified by the method, along with the parameters,
  * returns the response returned by the Service, and raises an Error callback in case of a failure.
@@ -92,7 +95,7 @@ var snsExecutor = function(params, cbOnData, cbOnError) {
 		xhr.open(this.verb, this.endpoint);
 	}
 
-	xhr.setRequestHeader('Host', 'sns.us-east-1.amazonaws.com');
+	xhr.setRequestHeader('Host', 'sns.'+regionEndpoint+'.amazonaws.com');
 
 	if (Ti.Platform.osname === 'iphone') {
 		xhr.send();
@@ -342,7 +345,7 @@ var dynamoDBCall = function(thisRef, params, cbOnData, cbOnError) {
 	// temperary secret key
 	var secretAccessKey = Ti.App.Properties.getString('tempSecretAccessKey');
 
-	var host = 'dynamodb.us-east-1.amazonaws.com';
+	var host = 'dynamodb.'+regionEndpoint+'.amazonaws.com';
 	//var dtStr = (new Date).toUTCString();
 	var canonicalHeader = 'host:' + thisRef.host + '\n' + 'x-amz-date:' + curDate + '\n' + 'x-amz-security-token:' + sessionToken + '\n' + 'x-amz-target:DynamoDB_20111205.' + thisRef.action + '\n';
 	var signedHeaders = 'Host;X-Amz-Date;x-amz-security-token;X-Amz-Target';
@@ -880,9 +883,9 @@ sessionOBJ.bedFrame.build(AWS, {
 		}]
 	}, {
 		property : 'SES',
-		endpoint : "https://email.us-east-1.amazonaws.com",
+		endpoint : "https://email."+regionEndpoint+".amazonaws.com",
 		verb : 'POST',
-		host : 'email.us-east-1.amazonaws.com',
+		host : 'email.'+regionEndpoint+'.amazonaws.com',
 		algorithm : 'HmacSHA1',
 		contentType : 'application/x-www-form-urlencoded',
 		executor : sesExecutor,
@@ -925,7 +928,7 @@ sessionOBJ.bedFrame.build(AWS, {
 		}]
 	}, {
 		property : 'SQS',
-		endpoint : "http://sqs.us-east-1.amazonaws.com",
+		endpoint : "http://sqs."+regionEndpoint+".amazonaws.com",
 		version : '2009-02-01',
 		children : [{
 			method : 'createQueue',
@@ -1047,7 +1050,7 @@ sessionOBJ.bedFrame.build(AWS, {
 		}]
 	}, {
 		property : 'SNS',
-		endpoint : "http://sns.us-east-1.amazonaws.com",
+		endpoint : "http://sns."+regionEndpoint+".amazonaws.com",
 		verb : 'POST',
 		executor : snsExecutor,
 		version : '2010-03-31',
@@ -1163,9 +1166,9 @@ sessionOBJ.bedFrame.build(AWS, {
 		}]
 	}, {
 		property : "DDB",
-		endpoint : "https://dynamodb.us-east-1.amazonaws.com/",
+		endpoint : "https://dynamodb."+regionEndpoint+".amazonaws.com/",
 		verb : 'POST',
-		host : "dynamodb.us-east-1.amazonaws.com",
+		host : "dynamodb."+regionEndpoint+".amazonaws.com",
 		algorithm : "HmacSHA256",
 		contentType : "application/x-amz-json-1.0",
 		validations : {
