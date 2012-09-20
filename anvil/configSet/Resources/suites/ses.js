@@ -32,6 +32,7 @@ module.exports = new function () {
 			},1000);
 	}//end testSimple
 	
+	/*
 	this.testsesDeleteVerifiedEmailAddressWithoutEmailAddress = function(testRun) {
 			
 			var params = {
@@ -44,9 +45,9 @@ module.exports = new function () {
 			});
 		}// end testsesDeleteVerifiedEmailAddressWithoutEmailAddress
 		
-		/**
-		 *Test case for deleteVerifiedEmailAddress by passing a valid EmailAddress
-		 */
+		
+		//Test case for deleteVerifiedEmailAddress by passing a valid EmailAddress
+		
 		this.testsesdeleteVerifiedEmailAddress = function(testRun) {
 			var params = {
 				'emailAddress' : 'test@test.com'//Required
@@ -62,9 +63,8 @@ module.exports = new function () {
 			});
 		}
 
-		/**
-		 *Test case for deleteVerifiedEmailAddress by passing a Invalid EmailAddress
-		 */
+		// Test case for deleteVerifiedEmailAddress by passing a Invalid EmailAddress
+		
 		this.testsesDeleteVerifiedEmailAddressWithInvalidEmailAddress = function(testRun) {
 			var params = {
 				'emailAddress' : 'caxvcx'//invalid EmailAddress
@@ -79,9 +79,7 @@ module.exports = new function () {
 		
 		//***************getSendQuota test cases start**************
 
-		/*
-		 *Test case for getSendQuota
-		 */
+		//Test case for getSendQuota
 		this.testsesGetSendQuota = function(testRun) {
 			var params = {
 
@@ -96,9 +94,8 @@ module.exports = new function () {
 		//*************getSendQuota test cases ends**************
 		//***************getSendStatistics test cases start**************
 
-		/*
-		 *Test case for getSendStatistics
-		 */
+
+		//Test case for getSendStatistics
 		this.testsesGetSendQuota = function(testRun) {
 			var params = {
 				
@@ -114,9 +111,7 @@ module.exports = new function () {
 
 		//*************** listVerifiedEmailAddresses test cases start**************
 
-		/*
-		 *Test case for listVerifiedEmailAddresses
-		 */
+		// Test case for listVerifiedEmailAddresses
 		this.testsesListVerifiedEmailAddresses = function(testRun) {
 			var params = {
 
@@ -130,10 +125,8 @@ module.exports = new function () {
 		//************* listVerifiedEmailAddresses test cases ends**************
 
 		//***************verifyEmailAddress test cases start**************
-
-		/**
-		 *Test case for verifyEmailAddress without passing EmailAddress
-		 */
+		
+		//Test case for verifyEmailAddress without passing EmailAddress
 		this.testsesVerifyEmailAddressWithoutEmailAddress = function(testRun) {
 			var params = {
 				'emailAddress' : ''//empty EmailAddress
@@ -145,10 +138,8 @@ module.exports = new function () {
 			});
 		}
 
-		/**
-		 *Test case for verifyEmailAddress by passing a valid EmailAddress
-		 * 
-		 */
+
+		// Test case for verifyEmailAddress by passing a valid EmailAddress
 		this.testsesVerifyEmailAddress = function(testRun) {
 			var params = {
 				'emailAddress' : 'test@test.com'//Required
@@ -163,9 +154,8 @@ module.exports = new function () {
 				Ti.API.debug(error); valueOf(testRun, true).shouldBeFalse(); finish(testRun);
 			});
 		}
-		/**
-		 *Test case for verifyEmailAddress by passing a Invalid EmailAddress
-		 */
+
+		//Test case for verifyEmailAddress by passing a Invalid EmailAddress
 		this.testsesVerifyEmailAddressWithInvalidEmailAddress = function(testRun) {
 			var params = {
 				'emailAddress' : 'bdvjhdbdgv'//invalid EmailAddress
@@ -179,9 +169,7 @@ module.exports = new function () {
 		//*************verifyEmailAddress test cases ends**************
 		//***************sendEmail test cases start**************
 
-		/**
-		 *Test case for sendEmail without passing Destination
-		 */
+		//Test case for sendEmail without passing Destination
 		this.testsesSendEmailWithoutDestination = function(testRun) {
 			var params = {
 				'destination' : '', //empty EmailAddress
@@ -195,9 +183,8 @@ module.exports = new function () {
 				Ti.API.debug(error); valueOf(testRun, true).shouldBeFalse(); finish(testRun);
 			});
 		}
-		/**
-		 *Test case for sendEmail without passing Message
-		 */
+
+		// Test case for sendEmail without passing Message
 		this.testsesSendEmailWithoutMessage = function(testRun) {
 			var params = {
 				'destination' : 'test@gmail.com',
@@ -210,9 +197,8 @@ module.exports = new function () {
 				Ti.API.debug(error); valueOf(testRun, true).shouldBeFalse(); finish(testRun);
 			});
 		}
-		/**
-		 *Test case for sendEmail without passing Source
-		 */
+
+		// Test case for sendEmail without passing Source
 		this.testsesSendEmailWithoutSource = function(testRun) {
 			var params = {
 				'destination' : 'test@test.com', //Required
@@ -225,9 +211,8 @@ module.exports = new function () {
 				Ti.API.debug(error); valueOf(testRun, true).shouldBeFalse(); finish(testRun);
 			});
 		}
-		/**
-		 *Test case for sendEmail by passing a valid Destination,Message,Source
-		 */
+
+		// Test case for sendEmail by passing a valid Destination,Message,Source
 		this.testsesSendEmail = function(testRun) {
 			var params = {
 				'destination' : 'test@gmail.com', //Required
@@ -241,9 +226,7 @@ module.exports = new function () {
 			});
 		}
 		
-		/**
-		 *Test case for sendEmail by passing a Invalid Destination
-		 */
+		//Test case for sendEmail by passing a Invalid Destination
 		this.testsesSendEmailWithInvalidDestination = function(testRun) {
 			var params = {
 				'destination' : 'hbegjhrg', //Invalid EmailAddress
@@ -257,9 +240,8 @@ module.exports = new function () {
 				Ti.API.debug(error); valueOf(testRun, true).shouldBeFalse(); finish(testRun);
 			});
 		},
-		/**
-		 *Test case for sendEmail by passing a Invalid Source
-		 */
+
+		// Test case for sendEmail by passing a Invalid Source
 		this.testsesSendEmailWithInvalidSource = function(testRun) {
 			var params = {
 				'destination' : 'test@test.com', //Required
@@ -276,9 +258,7 @@ module.exports = new function () {
 		//*************sendEmail test cases ends**************
 		//***************sendRawEmail test cases start**************
 
-		/**
-		 *Test case for sendRawEmail without passing RawMessage
-		 */
+		// Test case for sendRawEmail without passing RawMessage
 		this.testsesSendRawEmailWithoutRawMessage = function(testRun) {
 		
 			var params = {
@@ -292,6 +272,7 @@ module.exports = new function () {
 		}
 	});	
 	
+	*/
 	// Populate the array of tests based on the 'hammer' convention
 	this.tests = require('hammer').populateTests(this, 30000);
 	

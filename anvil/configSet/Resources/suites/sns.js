@@ -39,9 +39,9 @@ module.exports = new function () {
 	
 	
 		//*************Create Topic test cases start**************
-		/**
-		 *Test case for creating topic WithEmpty  name.
-		 */
+	
+	//Test case for creating topic WithEmpty  name.
+	/*
 	this.testcreateEmptyTopic_as_async = function(testRun) {
 			var params = {
 				'Name' : ''//Empty
@@ -52,10 +52,10 @@ module.exports = new function () {
 				finish(testRun);
 			});
 		}
-		/**
-		 *Test case for creating topic by  an Invalid name.
-		 */
-this.testcreateInvalidTopic_as_async = function(testRun) {
+		
+		//Test case for creating topic by  an Invalid name.
+		
+		this.testcreateInvalidTopic_as_async = function(testRun) {
 			var params = {
 				'Name' : 'DrillInvalidTopic#'//Only uppercase and lowercase ASCII letters, numbers, and hyphens valid.
 			};
@@ -65,9 +65,8 @@ this.testcreateInvalidTopic_as_async = function(testRun) {
 				finish(testRun);
 			});
 		}
-		/**
-		 *Test case for creating topic by  a valid topic name.
-		 */
+
+		// Test case for creating topic by  a valid topic name.
 		this.testcreateValidTopic_as_async = function(testRun) {
 			var params = {
 				'Name' : 'DrillBitTestTopic'//Required

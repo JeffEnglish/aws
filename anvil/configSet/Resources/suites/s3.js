@@ -40,7 +40,7 @@ module.exports = new function () {
 			},1000);
 	}//end testSimple
 	
-	
+	/*
 	this.testheadObject_as_async= function(testRun) {
 		var f = Titanium.Filesystem.getFile('KS_nav_views.png');
 		AWS.S3.putBucket({
@@ -521,9 +521,9 @@ module.exports = new function () {
 			valueOf(testRun, true).shouldBeFalse();finish(testRun);
 		});
 	}
-	/**
-	 *  Complete MultiPart Upload is used for completing the process of uploading in MultiPart.
-	 */
+	*/
+
+	// Complete MultiPart Upload is used for completing the process of uploading in MultiPart.
 
 	/*completeMultipartUpload_as_async= function(testRun) {
 		AWS.S3.putBucket({
@@ -626,6 +626,7 @@ module.exports = new function () {
 		});
 	},*/
 	
+	/*
 	this.testputObject_as_async= function(testRun) {
 		var f = Titanium.Filesystem.getFile('KS_nav_views.png');
 		AWS.S3.putBucket({
@@ -685,6 +686,7 @@ module.exports = new function () {
 	/*
 	 *  delete Multiple Objects is used for deleting multiple Objects from a Single Bucket.
 	 **/
+	
 	this.testdeleteMultipleObjects_as_async= function(testRun) {
 		AWS.S3.putBucket({
 			bucketName : 'test024'
@@ -2529,10 +2531,8 @@ module.exports = new function () {
 			finish(testRun);
 		});
 	}
-	/**
-	 *  abort MultiPart upload is used to Abort the MultiPart Upload.
-	 */
-
+	
+	//abort MultiPart upload is used to Abort the MultiPart Upload.
 	this.testabortMultipartUpload_as_async= function(testRun) {
 		AWS.S3.putBucket({
 			bucketName : 'DrillBitUpload'
@@ -3089,7 +3089,7 @@ module.exports = new function () {
 			finish(testRun);
 		});
 	}
-	
+	*/
 	// Populate the array of tests based on the 'hammer' convention
 	this.tests = require('hammer').populateTests(this, 30000);
 	

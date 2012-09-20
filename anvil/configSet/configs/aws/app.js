@@ -8,10 +8,10 @@
 var testSuites = [
 	//{ name:"ddb"},
 	{ name: "s3" },
-	{ name: "ses" },
-	{ name: "simpleDB" },
-	{ name: "sns" },
-	{ name: "sqs" }
+	{ name: "ses" }
+	//{ name: "simpleDB" },
+	//{ name: "sns" },
+	//{ name: "sqs" }
 ];
 var suites = require('hammer').populateSuites(testSuites);
 

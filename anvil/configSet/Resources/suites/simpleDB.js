@@ -42,7 +42,7 @@ module.exports = new function () {
 			},1000);
 	}//end testSimple
 	
-	
+	/*
 	this.testcreateDomain_as_async = function(testRun) {
 		AWS.SimpleDB.createDomain({
 			DomainName : 'DrillCases1234'
@@ -1087,6 +1087,7 @@ module.exports = new function () {
 			finish(testRun);
 		});
 	}
+	*/
 	
 	// Populate the array of tests based on the 'hammer' convention
 	this.tests = require('hammer').populateTests(this, 30000);
