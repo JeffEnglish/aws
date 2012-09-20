@@ -36,5 +36,6 @@
 	
 	
     <modules>
+        <module platform="commonjs" version="1.0.2">ti.aws</module>
     </modules>
 </ti:app>

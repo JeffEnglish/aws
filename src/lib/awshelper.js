@@ -181,7 +181,8 @@ awsHelper.httpError = function(thisRef, cbOnError) {
 	if(cbOnError) {
 		var error = sessionOBJ.xmlToJSON.toJSON(thisRef.responseText, false);
 		error.summary = thisRef.responseText;
-		cbOnError(thisRef.responseText);
+		//!! THIS WAS PASSING THE ORIGINAL RESPONSE TEXT INSTEAD OF THE CONVERTED JSON OBJECT
+		cbOnError(error);
 	}
 }
 /***
